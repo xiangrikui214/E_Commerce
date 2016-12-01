@@ -27,11 +27,16 @@ function uploadImageToServer(fileElmId, type, id)
 		success: function (data)
 		{
 			var result = JSON.parse(data);
+            if(result.status != 0) {
+              	alert(result.message);
+              	return;
+            }
+			// var result = JSON.parse(data);
 			$("#"+id).attr("src", result.uri);
 		},
-    error: function (XMLHttpRequest, textStatus, errorThrown) {
-      alert(errorThrown);
-    }
+    	error: function (XMLHttpRequest, textStatus, errorThrown) {
+      		alert(errorThrown);
+    	}
 	});
 	return false;
 }

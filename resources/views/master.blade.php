@@ -70,13 +70,15 @@
 		var weuiActionsheet = $('#weui_actionsheet');
 		hideActionSheet(weuiActionsheet, mask);
 		if(index == 1){
-
-		}else if(index == 2){
-
-		}else{
 			$('.bk_toptips').show();
 			$('.bk_toptips span').html("敬请期待");
 			setTimeout(function(){$('.bk_toptips').hide();}, 2000);
+		}else if(index == 2){
+			location.href = '/category';
+		}else if(index == 3){
+			location.href = '/cart';
+		}else if(index == 4){
+			location.href = '/order_list';
 		}
 	}
 

@@ -92,9 +92,8 @@ function onLoginClick(){
               alert(data.message);
               return;
             }
-            alert('登录成功');
             //跳转页面
-            location.href = '/category';
+            location.href = "{{$return_url}}";
           },
           error: function(xhr, status, error) {
             console.log(xhr);

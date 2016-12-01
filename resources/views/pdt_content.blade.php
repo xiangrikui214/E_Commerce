@@ -5,7 +5,7 @@
 @section('content')
 	<link rel="stylesheet" href="/css/swipe.css">
 
-<div class="page bk_content">
+<div class="page bk_content" style="top: 0;">
   <div class="addWrap">
     <div class="swipe" id="mySwipe">
       <div class="swipe-wrap">
@@ -37,7 +37,11 @@
   <div class="weui_cells">
     <div class="weui_cell">
     <p>
-        {{$pdt_content->content}}
+    @if($pdt_content->content != null)
+        {{!! $pdt_content->content !!}}
+    @else
+
+    @endif
     </p>
     </div>
   </div>
@@ -101,6 +105,9 @@
         });
   }
 
+  function _toCart(){
+    location.href = '/cart';
+  }
 </script>
 
 @endsection
